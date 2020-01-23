@@ -1,0 +1,22 @@
+{
+  "name": "rate",
+  "version": "1.0.0",
+  "description": "program that gets the rate rate and conversion of us-dollar into br-real",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aula",
+    "node",
+    "conversion",
+    "rate",
+    "dollar",
+    "real"
+  ],
+  "author": "Maicon Silva",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.1"
+  }
+}
