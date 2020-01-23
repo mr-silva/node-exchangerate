@@ -1,21 +1,23 @@
 const axios = require('axios');
 
+const url = 'https://economia.awesomeapi.com.br/json/list/USD-BRL';
+let dayParam = 2;
+
 const getData = (req, res) => {
-  axios.get('https://economia.awesomeapi.com.br/json/list/USD-BRL/2')
+  axios.get(`${url}/${dayParam}`)
     .then((response) => {
-      const object = response.data;
+      const apiData = response.data;
+      const [ today, yesterday ] = apiData;
+      const { name: name, high: highToday, low: lowToday, bid } = today;
+      const { high: highYesterday, low: lowYesterday } = yesterday;
       const returnData = [];
-      let name = object[0].name;
-      let highValue = object[0].high;
-      let lowValue = object[0].low;
-      let bid = object[0].bid;
-      let averageCurrentDay = (parseFloat(highValue) + parseFloat(lowValue)) / 2;
-      let averageLastDay = (parseFloat(object[1].high) + parseFloat(object[1].low)) / 2;
+      let averageCurrentDay = (parseFloat(highToday) + parseFloat(lowToday)) / 2;
+      let averageLastDay = (parseFloat(highYesterday) + parseFloat(lowYesterday)) / 2;
       let averageLastTwoDays = (averageLastDay + averageCurrentDay) / 2;
       returnData.push({
         'name': name,
-        'highValue': highValue,
-        'lowValue': lowValue,
+        'highValue': highToday,
+        'lowValue': lowToday,
         'bid': bid,
         'averageCurrentDay': averageCurrentDay,
         'averageLastTwoDays': averageLastTwoDays

@@ -1,8 +1,9 @@
+require('./node_modules/dotenv/config');
 const http = require('http');
 const rate = require('./index');
 
-const port = 3000;
-const ip = 'localhost';
+const ip = process.env.SERVER_IP;
+const port = process.env.SERVER_PORT;
 
 const server = http.createServer((req, res) => {
   if(req.url == '/') {

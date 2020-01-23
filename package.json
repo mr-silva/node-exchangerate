@@ -1,6 +1,6 @@
 {
   "name": "rate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "program that gets the rate rate and conversion of us-dollar into br-real",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "author": "Maicon Silva",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.1"
+    "axios": "^0.19.1",
+    "dotenv": "^8.2.0"
   }
 }
