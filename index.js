@@ -1,10 +1,9 @@
 const axios = require('axios');
 
-const url = 'https://economia.awesomeapi.com.br/json/list/USD-BRL';
-let dayParam = 2;
+const url = 'https://economia.awesomeapi.com.br/json/list/USD-BRL/2';
 
 const getData = (req, res) => {
-  axios.get(`${url}/${dayParam}`)
+  axios.get(url)
     .then((response) => {
       const apiData = response.data;
       const [ today, yesterday ] = apiData;
