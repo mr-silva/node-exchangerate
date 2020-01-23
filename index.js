@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const url = 'https://economia.awesomeapi.com.br/json/list/USD-BRL/2';
 
-const getData = (req, res) => {
+const getData = () => {
   axios.get(url)
     .then((response) => {
       const apiData = response.data;
